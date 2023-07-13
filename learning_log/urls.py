@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-
-
 """
 URL configuration for learning_log project.
 
@@ -18,11 +15,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-# from django.conf.urls import include, url
+from django.urls import path
 
 urlpatterns = [
-    # path(r'^admin/', include(admin.site.urls)),
-    path('^admin/', include((admin.site.urls, 'admin'), namespace='admin')),
-    path(r'', include(('learning_logs.urls', 'learning_logs'), namespace='learning_logs')),
+    path('admin/', admin.site.urls),
 ]
