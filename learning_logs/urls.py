@@ -16,10 +16,13 @@ urlpatterns = [
     # Detail page fo a single topic
     path('topics/<int:topic_id>/', views.topic, name='topic'),
 
-    #page for adding new topics
+    # page for adding new topics
     path('new_topic/', views.new_topic, name='new_topic'),
 
     # page for adding new entry
-    path('new_entry/(?P<topic_id>\d+)/', views.new_entry, name='new_entry'),
-    
+    path('new_entry/(P<topic_id>/)', views.new_entry, name='new_entry'),
+
+    # page for editing an entry
+    path('edit_entry(P<entry_id>/)', views.edit_entry, name='edit_entry'),
+
 ]
