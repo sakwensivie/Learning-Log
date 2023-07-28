@@ -34,9 +34,9 @@ def new_topic(request):
         form = TopicForm()
     else:
         # POST data submitted; process data.
-        form = TopicForm(request.POST)
+        form = TopicForm(data=request.POST)
         if form.is_valid():
-            form.save
+            form.save()
             return HttpResponseRedirect(reverse('learning_logs:topics'))
 
     context = {'form': form}
@@ -48,7 +48,7 @@ def new_entry(request, topic_id):
     topic = Topic.objects.get(id=topic_id)
 
     if request.method != 'POST':
-        # Noe data submitted; create a blank form.
+        # No data submitted; create a blank form.
         form = EntryForm()
     else:
         # POST data submitted, process data
