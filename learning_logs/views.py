@@ -14,7 +14,7 @@ def check_topic_owner(request, actual):
 
 
 def index(request):
-    '''The home page for learningn log'''
+    '''The home page for learning log'''
     return render(request, 'learning_logs/index.html')
 
 @login_required
